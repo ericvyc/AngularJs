@@ -1,0 +1,79 @@
+<html ng-app="app">
+    <head>
+        <title>Aula 08 - AngularJs</title>
+        <!-- Biblioteca AngularJs -->
+        <script src="js/angular/angular.min.js"></script>
+        <!-- Módulo da Aplicação -->
+        <script src="js/app.module.js"></script>
+        <!-- Controller Aula07 -->
+        <script src="js/aula08.controller.js"></script>
+        <meta charset="utf-8">
+        
+        <style>
+            input {
+                border-radius: 6px;
+            }
+            input.ng-invalid.ng-touched {
+                border: 1px solid #f05050;
+            }
+            
+            input.ng-valid.ng-touched {
+                border: 1px solid #27c24c;
+            }
+        </style>
+        
+    </head>
+    <body ng-controller="aula08Controller">
+        
+        <form name="frm" novalidate ng-submit="incluirPessoa(pessoa)">
+            
+            <p>
+                Nome: <input name="txtNome" type="text" ng-model="pessoa.nome" required />
+                <div ng-show="frm.$submitted || frm.txtNome.$touched">
+                    <div ng-show="frm.txtNome.$error.required">
+                        O campo "Nome" deve ser preenchido.
+                    </div>
+                </div>
+            </p>
+            
+            <p>
+                E-mail: <input name="txtEmail" type="email" ng-model="pessoa.email" required />
+                <div ng-show="frm.$submitted || frm.txtEmail.$touched">
+                    <div ng-show="frm.txtEmail.$error.required">
+                        O campo "E-mail" deve ser preenchido.
+                    </div>
+                    <div ng-show="frm.txtEmail.$error.email">
+                        O campo "E-mail" deve ser conter um email válido.
+                    </div>                    
+                </div>
+            </p>
+            
+            <p>
+                Sexo: <input type="radio" value="m" ng-model="pessoa.sexo" />Masculino
+                    <input type="radio" value="f" ng-model="pessoa.sexo"/>Feminino
+            </p>
+            
+            <p>
+                Estado: <select ng-model="pessoa.estado">
+                <option ng-repeat="estado in estados" value="{{estado}}" ng-selected="estado==pessoa.estado" >
+                    {{estado}}</option>
+                        </select>
+            </p>
+            
+            <p>
+                <input type="submit" value="Salvar" ng-disabled="frm.$invalid" />
+                <input type="reset" value="Resetar" ng-click="resetarForm()" />
+            </p>
+            
+            <pre>
+                {{ pessoa | json }}
+            </pre>
+            
+            <pre>
+                {{ pessoas | json }}
+            </pre>
+                        
+        </form>
+        
+    </body>
+</html>

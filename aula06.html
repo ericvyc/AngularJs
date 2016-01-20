@@ -1,0 +1,20 @@
+<html ng-app="app">
+    <head>
+        <title>Aula 06 - AngularJs</title>
+        <!-- Biblioteca AngularJs -->
+        <script src="js/angular/angular.min.js"></script>
+        <!-- Módulo da Aplicação -->
+        <script src="js/app.module.js"></script>
+        <!-- Controller Aula06 -->
+        <script src="js/aula06.controller.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        
+        <div ng-controller="aula06Controller">
+            {{ nome }}<br />
+            <input type="button" value="Alert" ng-click="olaMundo('Eric')" />
+        </div>
+        
+    </body>
+</html>
