@@ -1,0 +1,38 @@
+<html ng-app="appRoute">
+    <head>
+        <title>Aula 11 - AngularJs</title>
+        <!-- Biblioteca AngularJs -->
+        <script src="js/angular/angular.min.js"></script>
+        <script src="js/angular/angular-route.min.js"></script>
+        <script src="js/angular/angular-route.min.js.map"></script>
+        <!-- Módulo da Aplicação -->
+        <!-- e -->
+        <!-- Controller Aula10 -->
+        <script src="js/aula11.controller.js"></script>
+
+        <meta charset="utf-8">
+        <base href="/AngularJs/" />
+    </head>
+    <body>
+        <div ng-controller="aula11Controller">
+        Código da página 2: <input type="number" ng-model="cod" />
+        <ul>
+            <li>
+                <a href="/AngularJs/aula11.html">Inicial</a>
+                <a href="Pagina1">Página 1</a>
+                <a href="Pagina2/{{cod}}" ng-show="cod != null">Página 2</a>
+            </li>
+        </ul>
+        
+        <p>Cabeçalho</p>
+        
+        <div ng-view>
+        
+        </div>
+        
+        <p>Rodapé</p>
+            
+        </div>
+
+    </body>
+</html>

@@ -1,0 +1,53 @@
+<html ng-app="app">
+    <head>
+        <title>Aula 09 - AngularJs</title>
+        <!-- Biblioteca AngularJs -->
+        <script src="js/angular/angular.min.js"></script>
+        <!-- Módulo da Aplicação -->
+        <script src="js/app.module.js"></script>
+        <!-- Controller Aula07 -->
+        <script src="js/aula07.controller.js"></script>
+        <!-- Controller Aula09 -->
+        <script src="js/aula09.controller.js"></script>
+        <!-- Service Aula09 -->
+        <script src="js/aula09.service.js"></script>
+        <!-- Factory Aula09 -->
+        <script src="js/aula09.pessoa.factory.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body>
+        
+        <div ng-controller="aula09Controller">
+            Soma - Controller 1 <br />
+            Valor 1: <input type="number" ng-model="valor1" /><br />
+            Valor 2: <input type="number" ng-model="valor2" /><br />
+            Nome: <input type="text" ng-model="pessoa.nome" /><br />
+
+            <div ng-show="valor1 != null && valor2 != null">
+                <p>Soma: {{ op.somar(valor1,valor2) }}</p>
+            </div>
+            
+            <p>Nome: {{ pessoa.nome }}</p>
+            <p>Idade: {{ pessoa.idade }}</p>
+            <p>Saudação: {{ pessoa.saudacao() }}</p>
+            
+        </div>
+        
+        <div ng-controller="aula09Controller2">
+            Subtrair - Controller 2 <br />
+            Valor 1: <input type="number" ng-model="valor1" /><br />
+            Valor 2: <input type="number" ng-model="valor2" /><br />
+            Nome: <input type="text" ng-model="pessoa.nome" /><br />
+
+            <div ng-show="valor1 != null && valor2 != null">
+                <p>Subtração: {{ op.subtrair(valor1,valor2) }}</p>
+            </div>
+            
+            <p>Nome: {{ pessoa.nome }}</p>
+            <p>Idade: {{ pessoa.idade }}</p>
+            <p>Saudação: {{ pessoa.saudacao() }}</p>
+            
+         </div>   
+        
+    </body>
+</html>

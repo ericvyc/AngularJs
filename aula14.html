@@ -1,0 +1,25 @@
+<html ng-app="app">
+    <head>
+        <title>Aula 14 - AngularJs</title>
+        <!-- Biblioteca AngularJs -->
+        <script src="js/angular/angular.min.js"></script>
+        <!-- Módulo da Aplicação -->
+        <script src="js/app.module.js"></script>
+        <!-- Controller Aula10 -->
+        <script src="js/aula14.controller.js"></script>
+        <meta charset="utf-8">
+    </head>
+    <body ng-controller="aula14Controller">
+        
+        <p ng-repeat="pessoa in dados">{{ pessoa.nome }} / {{ pessoa.idade }} </p>
+        
+        <button type="button" ng-click="carregaDados()">Carregar Dados</button>
+        
+        <hr/>
+        
+         <p ng-repeat="city in cidades">{{ city.city }} / {{ city.cnt }} / {{ city.cod }}</p>
+        
+        <!-- 524901 -->
+        <button type="button" ng-click="carregaPrevisao()" ng-show="cidade != null">Previsão do Tempo</button>
+    </body>
+</html>
